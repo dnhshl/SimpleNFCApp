@@ -15,7 +15,7 @@ class MainViewModel: ViewModel() {
     val tagData: LiveData<String>
         get() = _tagData
 
-    fun getTagData(data: String) {
+    fun setTagData(data: String) {
         _tagData.value = data
         Log.i(TAG,"_tagData: ${_tagData.value.toString()}")
     }
