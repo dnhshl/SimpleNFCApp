@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
     private fun enableNfcForegroundDispatch() {
         try {
             val intent = Intent(this, javaClass).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
-            val nfcPendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+            val nfcPendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE)
             nfcAdapter.enableForegroundDispatch(this, nfcPendingIntent, null, null)
         } catch (ex: IllegalStateException) {
             Log.e(TAG, "Error enabling NFC foreground dispatch", ex)
